@@ -1,0 +1,28 @@
+[
+    {
+        
+        "userName": {
+            "label" : "User Name",
+            "fieldId": "userName",
+            "fieldName": "userName",
+            "fieldType": "text",
+            "mandatory": "required",
+            "lengthString": 12
+        },
+
+        "password": {
+            "label" : "Password",
+            "fieldId": "password",
+            "fieldName": "password",
+            "mandatory": "required",
+            "fieldType": "text",
+            "lengthString": 12,
+            "regex": "(?=.*[0-9])(?=.*[!@#%^&*])[a-zA-Z0-9!@#$%^&*]{8,}"
+        },
+        
+        "required" : {
+            "userName" : true,
+            "password" : true
+        }
+    }
+]

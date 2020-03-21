@@ -1,0 +1,72 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h3> Loan Applicant Form </h3>
+
+                <form [formGroup]="applicantForm">
+
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" formControlName="title"
+                            aria-describedby="title" placeholder="Mr./ Mrs./Ms."
+                            appFormControlValidationMsg validationMsgId="title"
+                            [ngClass]="{ 'is-invalid': submitted && fCtrls.title.errors }">
+                        <!-- <div *ngIf="submitted && fCtrls.title.errors" class="invalid-feedback">
+                            <div *ngIf="fCtrls.title.errors.required"> Please Enter Title </div>
+                        </div> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName"> First Name </label>
+                        <input type="text" class="form-control" id="firstName" formControlName="firstName"
+                            aria-describedby="firstName" placeholder="First Name"
+                            appFormControlValidationMsg validationMsgId="firstName"
+                            [ngClass]="{ 'is-invalid': submitted && fCtrls.firstName.errors }">
+                        <!-- <div *ngIf="submitted && fCtrls.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="fCtrls.firstName.errors.required"> Please Enter the First Name </div>
+                        </div> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="middleName"> Middle Name </label>
+                        <input type="text" class="form-control" id="middleName" formControlName="middleName"
+                            aria-describedby="middleName" placeholder="Middle Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName"> Last Name </label>
+                        <input type="text" class="form-control" id="lastName" formControlName="lastName"
+                            aria-describedby="lastName" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobileNumber"> Mobile Number </label>
+                        <input type="text" class="form-control" id="mobileNumber" formControlName="mobileNumber"
+                            aria-describedby="mobileNumber" placeholder=" +91"
+                            appFormControlValidationMsg validationMsgId="mobileNumber"
+                            [ngClass]="{ 'is-invalid': submitted && fCtrls.mobileNumber.errors }">
+                        <!-- <div *ngIf="submitted && fCtrls.mobileNumber.errors" class="invalid-feedback">
+                            <div *ngIf="fCtrls.mobileNumber.errors.required"> Please Enter Mobile Number </div>
+                            <div *ngIf="fCtrls.mobileNumber.errors.pattern"> Please Enter Valid Mobile Number </div>
+                            <div *ngIf="fCtrls.mobileNumber.errors.maxlength"> Mobile Number shoukld be 10 Digits Only. </div>
+                        </div> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantType"> Applicant Type</label>
+                        <input type="text" class="form-control" id="applicantType" formControlName="applicantType"
+                            aria-describedby="applicantType" placeholder=" Applicant Type"
+                            appFormControlValidationMsg validationMsgId="applicantType"
+                            [ngClass]="{ 'is-invalid': submitted && fCtrls.applicantType.errors }">
+                        <!-- <div *ngIf="submitted && fCtrls.applicantType.errors" class="invalid-feedback">
+                            <div *ngIf="fCtrls.applicantType.errors.required"> Please Enter Applicant Type </div>
+                        </div> -->
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit" (click)="onSubmit()"
+                        appFormSubmitValidationMsg [validationControl]="applicantForm">Submit</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

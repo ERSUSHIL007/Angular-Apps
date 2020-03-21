@@ -1,0 +1,58 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h3> Loan Application Form </h3>
+
+        <form [formGroup]="loanForm">
+
+          <div class="form-group">
+            <label for="businessCategory">Business Category</label>
+            <input type="text" class="form-control" id="businessCategory" name="businessCategory"
+              formControlName="businessCategory" aria-describedby="businessCategory" placeholder="Business Category"
+              appFormControlValidationMsg validationMsgId="businessCategory"
+              [ngClass]="{ 'is-invalid': submitted && fCtrls.businessCategory.errors }">
+            <!-- <div *ngIf="submitted && fCtrls.businessCategory.errors" class="invalid-feedback">
+              <div *ngIf="fCtrls.businessCategory.errors.required"> Please Enter the Business Category </div>
+            </div> -->
+          </div>
+          <div class="form-group">
+            <label for="product">Product</label>
+            <input type="text" class="form-control" id="product" formControlName="product" aria-describedby="product"
+              placeholder="product" appFormControlValidationMsg validationMsgId="product"
+              [ngClass]="{ 'is-invalid': submitted && fCtrls.product.errors }">
+            <!-- <div *ngIf="submitted && fCtrls.product.errors" class="invalid-feedback">
+              <div *ngIf="fCtrls.product.errors.required"> Please Enter the Product Name </div>
+            </div> -->
+            </div>
+            <div class="form-group">
+              <label for="loanAmount">Loan Amount</label>
+              <input type="text" class="form-control" id="loanAmount" formControlName="loanAmount"
+                aria-describedby="loanAmount" placeholder="loanAmount" appFormControlValidationMsg validationMsgId="loanAmount"
+                [ngClass]="{ 'is-invalid': submitted && fCtrls.loanAmount.errors }">
+              <!-- <div *ngIf="submitted && fCtrls.loanAmount.errors" class="invalid-feedback">
+                <div *ngIf="fCtrls.loanAmount.errors.required"> Please Enter the Loan Amount </div>
+                <div *ngIf="fCtrls.loanAmount.errors.pattern"> Please Enter Valid Loan Amount </div>
+              </div> -->
+              </div>
+              <div class="form-group">
+                <label for="salesEmpID">Sales Employee ID</label>
+                <input type="text" class="form-control" id="salesEmpID" formControlName="salesEmpID"
+                  aria-describedby="salesEmpID" placeholder="Sales Employee ID"
+                  appFormControlValidationMsg validationMsgId="salesEmpID"
+                  [ngClass]="{ 'is-invalid': submitted && fCtrls.salesEmpID.errors }">
+                <!-- <div *ngIf="submitted && fCtrls.salesEmpID.errors" class="invalid-feedback">
+                  <div *ngIf="fCtrls.salesEmpID.errors.required"> Please Enter the Sales Employee ID </div>
+                </div> -->
+              </div>
+                <div class="form-group">
+                  <button class="btn btn-primary" type="submit" (click)="saveLoanInfo()"
+                  appFormSubmitValidationMsg [validationControl]="loanForm">Submit</button>
+                </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
